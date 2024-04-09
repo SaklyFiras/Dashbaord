@@ -22,7 +22,7 @@ import {
 
 import { Badge } from "@/components/ui/badge";
 
-export default function Dashboard() {
+export default function Dashboard({ children }) {
 	return (
 		<div className="flex h-full bg-gray-200 dark:bg-gray-900">
 			<aside className="w-1/6 bg-gradient-to-b from-white to-gray-100 dark:from-gray-800 dark:to-gray-700 hidden sm:block">
@@ -33,7 +33,7 @@ export default function Dashboard() {
 				</div>
 				<ul>
 					<li className="flex items-center p-6 hover:bg-gray-100 dark:hover:bg-gray-700">
-						<Link className="flex items-center space-x-4" href="#">
+						<Link className="flex items-center space-x-4" href={"/"}>
 							<HomeIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
 							<span className="text-sm font-medium">Dashboard</span>
 						</Link>
@@ -48,28 +48,43 @@ export default function Dashboard() {
 								<AccordionContent className="mt-1">
 									<ul className="flex flex-col ">
 										<li className="flex items-center p-3 hover:bg-gray-100 dark:hover:bg-gray-800">
-											<Link className="flex items-center space-x-4" href="#">
+											<Link
+												className="flex items-center space-x-4"
+												href={"/reports/sales"}
+											>
 												<span className="text-sm ">Sales</span>
 											</Link>
 										</li>
 										<li className="flex items-center p-3 hover:bg-gray-100 dark:hover:bg-gray-800">
-											<Link className="flex items-center space-x-4" href="#">
+											<Link
+												className="flex items-center space-x-4"
+												href={"/reports/storefront_compare"}
+											>
 												<span className="text-sm ">Storefront Compare</span>
 											</Link>
 										</li>
-										
+
 										<li className="flex items-center p-3 hover:bg-gray-100 dark:hover:bg-gray-800">
-											<Link className="flex items-center space-x-4" href="#">
+											<Link
+												className="flex items-center space-x-4"
+												href={"/reports/top_performers"}
+											>
 												<span className="text-sm ">Top Performers</span>
 											</Link>
 										</li>
 										<li className="flex items-center p-3 hover:bg-gray-100 dark:hover:bg-gray-800">
-											<Link className="flex items-center space-x-4" href="#">
+											<Link
+												className="flex items-center space-x-4"
+												href={"/reports/monthly_settlement"}
+											>
 												<span className="text-sm ">Monthly Settlement</span>
 											</Link>
 										</li>
 										<li className="flex items-center p-3 hover:bg-gray-100 dark:hover:bg-gray-800">
-											<Link className="flex items-center space-x-4" href="#">
+											<Link
+												className="flex items-center space-x-4"
+												href={"/reports/month-end_inventory"}
+											>
 												<span className="text-sm ">Month-End Inventory</span>
 											</Link>
 										</li>
@@ -79,32 +94,32 @@ export default function Dashboard() {
 						</Accordion>
 					</li>
 					<li className="flex items-center p-6 hover:bg-gray-100 dark:hover:bg-gray-700">
-						<Link className="flex items-center space-x-4" href="#">
+						<Link className="flex items-center space-x-4" href={"/inventory"}>
 							<ShoppingCartIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
 							<span className="text-sm font-medium">Inventory</span>
 						</Link>
 					</li>
 					<li className="flex items-center p-6 hover:bg-gray-100 dark:hover:bg-gray-700">
-						<Link className="flex items-center space-x-4" href="#">
+						<Link className="flex items-center space-x-4" href={"/costumers"}>
 							<UsersIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
 							<span className="text-sm font-medium">Costumers</span>
 						</Link>
 					</li>
 					<li className="flex items-center p-6 hover:bg-gray-100 dark:hover:bg-gray-700">
-						<Link className="flex items-center space-x-4" href="#">
+						<Link className="flex items-center space-x-4" href={"/adjustments"}>
 							<SettingsIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
 							<span className="text-sm font-medium">Adjustments</span>
 						</Link>
 					</li>
 					<li className="flex items-center p-6 hover:bg-gray-100 dark:hover:bg-gray-700">
-						<Link className="flex items-center space-x-4" href="#">
+						<Link className="flex items-center space-x-4" href={"/sync"}>
 							<SyncIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
 							<span className="text-sm font-medium">Sync</span>
 						</Link>
 					</li>
 				</ul>
 			</aside>
-			
+			{children}
 		</div>
 	);
 }

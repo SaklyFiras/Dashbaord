@@ -11,7 +11,7 @@ export default function Navbar() {
 				<span className="text-lg font-semibold">MyDASHBAORD</span>
 			</Link>
 			<div className="flex items-center p-1">
-				<p>Shad</p>
+				<p>Anis</p>
 				<Avatar>
 					<AvatarImage src="https://github.com/shadcn.png" />
 					<AvatarFallback>CN</AvatarFallback>
