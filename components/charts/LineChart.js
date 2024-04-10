@@ -143,7 +143,11 @@ export function LineChart({ ...props }) {
 				text: "Sales",
 			},
 		},
-
+		//animation
+		animation: {
+			duration: 2000,
+			easing: "easeInOutQuart",
+		},
 		
 		
 		

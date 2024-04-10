@@ -20,7 +20,7 @@ import {
 	AccordionTrigger,
 } from "@/components/ui/accordion";
 
-import { Badge } from "@/components/ui/badge";
+import { Drawer } from "@/components/ui/drawer";
 
 export default function Dashboard({ children }) {
 	return (
@@ -42,7 +42,7 @@ export default function Dashboard({ children }) {
 						<Accordion type="single" collapsible>
 							<AccordionItem value="item-1">
 								<AccordionTrigger className="p-0 space-x-4">
-									<ReportIcon className="h-5 w-5 text-gray-500 dark:text-gray-400 " />
+									<ReportIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
 									<span className="text-sm font-medium">Reports</span>
 								</AccordionTrigger>
 								<AccordionContent className="mt-1">

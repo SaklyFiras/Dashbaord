@@ -3,13 +3,22 @@ import { Button } from "@/components/ui/button";
 import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ModeToggle } from "@/components/ModeToggle";
+
+import { DatePickerWithRange } from "@/components/DatePicker";
+
+import { DrawerButton } from "@/components/Drawer";
+
 export default function Navbar() {
 	return (
 		<div className="flex items-center justify-between px-4 py-2 bg-white dark:bg-gray-800">
 			<Link className="flex items-center gap-2" href="#">
 				<MountainIcon className="h-6 w-6" />
-				<span className="text-lg font-semibold">MyDASHBAORD</span>
+				<span className="text-lg font-semibold">MyDASHBOARD</span>
 			</Link>
+			<div className=" flex space-x-4 w-max">
+				<DrawerButton />
+				<DatePickerWithRange />
+			</div>
 			<div className="flex items-center p-1">
 				<p>Anis</p>
 				<Avatar>
