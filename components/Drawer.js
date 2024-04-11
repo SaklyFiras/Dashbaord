@@ -31,7 +31,7 @@ const data = [
 export function DrawerButton() {
 	return (
 		<Drawer>
-			<DrawerTrigger className=" bg-[#020817] p-[8px] px-4 hover:bg-inherit rounded-md">
+			<DrawerTrigger className=" dark:bg-[#020817] p-[8px] px-4 dark:hover:bg-inherit rounded-md hover:bg-slate-100 ">
 				Shops
 			</DrawerTrigger>
 			<DrawerContent>
