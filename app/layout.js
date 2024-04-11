@@ -15,7 +15,7 @@ import PageLayout from "@/components/PageLayout";
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang="en">
+		<html >
 			<body>
 				<ThemeProvider
 					attribute="class"

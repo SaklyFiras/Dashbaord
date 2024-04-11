@@ -10,7 +10,7 @@ import { DrawerButton } from "@/components/Drawer";
 
 export default function Navbar() {
 	return (
-		<div className="flex items-center justify-between px-4 py-2 bg-white dark:bg-gray-800">
+		<div className="flex flex-wrap items-center justify-between px-4 py-2 bg-white dark:bg-gray-800">
 			<Link className="flex items-center gap-2" href="#">
 				<MountainIcon className="h-6 w-6" />
 				<span className="text-lg font-semibold">MyDASHBOARD</span>
@@ -36,36 +36,100 @@ export default function Navbar() {
 				</SheetTrigger>
 				<SheetContent side="left">
 					<div className="grid w-[200px] p-4">
-						<Link
-							className="text-lg font-medium hover:underline underline-offset-4"
-							href="#"
-						>
-							Home
-						</Link>
-						<Link
-							className="text-lg font-medium hover:underline underline-offset-4"
-							href="#"
-						>
-							About
-						</Link>
-						<Link
-							className="text-lg font-medium hover:underline underline-offset-4"
-							href="#"
-						>
-							Services
-						</Link>
-						<Link
-							className="text-lg font-medium hover:underline underline-offset-4"
-							href="#"
-						>
-							Portfolio
-						</Link>
-						<Link
-							className="text-lg font-medium hover:underline underline-offset-4"
-							href="#"
-						>
-							Contact
-						</Link>
+						<ul>
+							<li className="flex items-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+								<Link className="flex items-center space-x-4" href="/">
+									<MountainIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+									<span className="text-sm font-medium">Dashboard</span>
+								</Link>
+							</li>
+							<li className="flex items-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+								<div className="flex flex-col ">
+									<p className="flex items-center space-x-4">
+										<MountainIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+										<span className="text-sm font-medium">Reports</span>
+									</p>
+									<ul>
+										<li className="flex items-center p-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+											<Link
+												className="flex items-center space-x-4"
+												href={"/reports/sales"}
+											>
+												<span className="text-sm ">Sales</span>
+											</Link>
+										</li>
+										<li className="flex items-center p-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+											<Link
+												className="flex items-center space-x-4"
+												href={"/reports/storefront_compare"}
+											>
+												<span className="text-sm ">Storefront Compare</span>
+											</Link>
+										</li>
+										<li className="flex items-center p-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+											<Link
+												className="flex items-center space-x-4"
+												href={"/reports/top_performers"}
+											>
+												<span className="text-sm ">Top Performers</span>
+											</Link>
+										</li>
+										<li className="flex items-center p-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+											<Link
+												className="flex items-center space-x-4"
+												href={"/reports/monthly_settlement"}
+											>
+												<span className="text-sm ">Monthly Settlement</span>
+											</Link>
+										</li>
+										<li className="flex items-center p-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+											<Link
+												className="flex items-center space-x-4"
+												href={"/reports/month-end_inventory"}
+											>
+												<span className="text-sm ">Month-End Inventory</span>
+											</Link>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li className="flex items-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+								<Link
+									className="flex items-center space-x-4"
+									href="/reports/traffic"
+								>
+									<MountainIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+									<span className="text-sm font-medium">Inventory</span>
+								</Link>
+							</li>
+							<li className="flex items-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+								<Link
+									className="flex items-center space-x-4"
+									href="/reports/engagement"
+								>
+									<MountainIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+									<span className="text-sm font-medium">Costumers</span>
+								</Link>
+							</li>
+							<li className="flex items-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+								<Link
+									className="flex items-center space-x-4"
+									href="/reports/engagement"
+								>
+									<MountainIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+									<span className="text-sm font-medium">Adjustments</span>
+								</Link>
+							</li>
+							<li className="flex items-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+								<Link
+									className="flex items-center space-x-4"
+									href="/reports/engagement"
+								>
+									<MountainIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+									<span className="text-sm font-medium">Sync</span>
+								</Link>
+							</li>
+						</ul>
 					</div>
 				</SheetContent>
 			</Sheet>

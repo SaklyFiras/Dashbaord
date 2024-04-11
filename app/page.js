@@ -1,4 +1,3 @@
-
 import { CardTitle, CardHeader, CardContent, Card } from "@/components/ui/card";
 
 import { LineChart } from "@/components/charts/LineChart";
@@ -7,306 +6,312 @@ import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 
 import { Badge } from "@/components/ui/badge";
 
-
-
 export default function Home() {
 	return (
-		<main className="flex-1 p-6">
+		<main className="flex-1 p-6 w-screen">
 			<h1 className="text-3xl font-semibold text-gray-800 dark:text-white">
 				Dashboard
 			</h1>
-			
 
-			<div className="grid grid-cols-3   gap-6 mt-6">
-				<Card>
-					<CardHeader className="pb-2">
-						<CardTitle>Today</CardTitle>
-					</CardHeader>
-					<CardContent>
-						<Table>
-							<TableBody>
-								<TableRow>
-									<TableCell className="font-medium">Gross Sales</TableCell>
-									<TableCell className="text-right">
-										<div className="flex items-center justify-end">
-											$250.00
-											<Badge className="ml-1 bg-indigo-800">
-												<AngleUpIcon className="w-4 h-4" />
-												1.5%
-											</Badge>
-										</div>
-									</TableCell>
-								</TableRow>
-								<TableRow>
-									<TableCell className="font-medium">Client Net</TableCell>
-									<TableCell className="text-right">
-										<div className="flex items-center justify-end">
-											$250.00
-											<Badge className="ml-1 bg-red-800">
-												<AngleDownIcon className="w-4 h-4" />
-												1.5%
-											</Badge>
-										</div>
-									</TableCell>
-								</TableRow>
-								<TableRow>
-									<TableCell className="font-medium">Merchline Net</TableCell>
-									<TableCell className="text-right">
-										<div className="flex items-center justify-end">
-											$250.00
-											<Badge className="ml-1 bg-indigo-800">
-												<AngleUpIcon className="w-4 h-4" />
-												1.5%
-											</Badge>
-										</div>
-									</TableCell>
-								</TableRow>
-								<TableRow>
-									<TableCell className="font-medium">Orders</TableCell>
-									<TableCell className="text-right">
-										<div className="flex items-center justify-end">
-											$250.00
-											<Badge className="ml-1 bg-indigo-800">
-												<AngleUpIcon className="w-4 h-4" />
-												1.5%
-											</Badge>
-										</div>
-									</TableCell>
-								</TableRow>
-								<TableRow>
-									<TableCell className="font-medium">Avg Order Value</TableCell>
-									<TableCell className="text-right">
-										<div className="flex items-center justify-end">
-											$250.00
-											<Badge className="ml-1 bg-indigo-800">
-												<AngleUpIcon className="w-4 h-4" />
-												1.5%
-											</Badge>
-										</div>
-									</TableCell>
-								</TableRow>
-							</TableBody>
-						</Table>
-					</CardContent>
-				</Card>
-				<Card>
-					<CardHeader className="pb-2">
-						<CardTitle>Week</CardTitle>
-					</CardHeader>
-					<CardContent>
-						<Table>
-							<TableBody>
-								<TableRow>
-									<TableCell className="font-medium">Gross Sales</TableCell>
-									<TableCell className="text-right">
-										<div className="flex items-center justify-end">
-											$250.00
-											<Badge className="ml-1 bg-indigo-800">
-												<AngleUpIcon className="w-4 h-4" />
-												1.5%
-											</Badge>
-										</div>
-									</TableCell>
-								</TableRow>
-								<TableRow>
-									<TableCell className="font-medium">Client Net</TableCell>
-									<TableCell className="text-right">
-										<div className="flex items-center justify-end">
-											$250.00
-											<Badge className="ml-1 bg-red-800">
-												<AngleDownIcon className="w-4 h-4" />
-												1.5%
-											</Badge>
-										</div>
-									</TableCell>
-								</TableRow>
-								<TableRow>
-									<TableCell className="font-medium">Merchline Net</TableCell>
-									<TableCell className="text-right">
-										<div className="flex items-center justify-end">
-											$250.00
-											<Badge className="ml-1 bg-indigo-800">
-												<AngleUpIcon className="w-4 h-4" />
-												1.5%
-											</Badge>
-										</div>
-									</TableCell>
-								</TableRow>
-								<TableRow>
-									<TableCell className="font-medium">Orders</TableCell>
-									<TableCell className="text-right">
-										<div className="flex items-center justify-end">
-											$250.00
-											<Badge className="ml-1 bg-indigo-800">
-												<AngleUpIcon className="w-4 h-4" />
-												1.5%
-											</Badge>
-										</div>
-									</TableCell>
-								</TableRow>
-								<TableRow>
-									<TableCell className="font-medium">Avg Order Value</TableCell>
-									<TableCell className="text-right">
-										<div className="flex items-center justify-end">
-											$250.00
-											<Badge className="ml-1 bg-indigo-800">
-												<AngleUpIcon className="w-4 h-4" />
-												1.5%
-											</Badge>
-										</div>
-									</TableCell>
-								</TableRow>
-							</TableBody>
-						</Table>
-					</CardContent>
-				</Card>
-				<Card>
-					<CardHeader className="pb-2">
-						<CardTitle>Month</CardTitle>
-					</CardHeader>
-					<CardContent>
-						<Table>
-							<TableBody>
-								<TableRow>
-									<TableCell className="font-medium">Gross Sales</TableCell>
-									<TableCell className="text-right">
-										<div className="flex items-center justify-end">
-											$250.00
-											<Badge className="ml-1 bg-indigo-800">
-												<AngleUpIcon className="w-4 h-4" />
-												1.5%
-											</Badge>
-										</div>
-									</TableCell>
-								</TableRow>
-								<TableRow>
-									<TableCell className="font-medium">Client Net</TableCell>
-									<TableCell className="text-right">
-										<div className="flex items-center justify-end">
-											$250.00
-											<Badge className="ml-1 bg-red-800">
-												<AngleDownIcon className="w-4 h-4" />
-												1.5%
-											</Badge>
-										</div>
-									</TableCell>
-								</TableRow>
-								<TableRow>
-									<TableCell className="font-medium">Merchline Net</TableCell>
-									<TableCell className="text-right">
-										<div className="flex items-center justify-end">
-											$250.00
-											<Badge className="ml-1 bg-indigo-800">
-												<AngleUpIcon className="w-4 h-4" />
-												1.5%
-											</Badge>
-										</div>
-									</TableCell>
-								</TableRow>
-								<TableRow>
-									<TableCell className="font-medium">Orders</TableCell>
-									<TableCell className="text-right">
-										<div className="flex items-center justify-end">
-											$250.00
-											<Badge className="ml-1 bg-indigo-800">
-												<AngleUpIcon className="w-4 h-4" />
-												1.5%
-											</Badge>
-										</div>
-									</TableCell>
-								</TableRow>
-								<TableRow>
-									<TableCell className="font-medium">Avg Order Value</TableCell>
-									<TableCell className="text-right">
-										<div className="flex items-center justify-end">
-											$250.00
-											<Badge className="ml-1 bg-indigo-800">
-												<AngleUpIcon className="w-4 h-4" />
-												1.5%
-											</Badge>
-										</div>
-									</TableCell>
-								</TableRow>
-							</TableBody>
-						</Table>
-					</CardContent>
-				</Card>
-				<Card>
-					<CardHeader className="pb-2">
-						<CardTitle>Year</CardTitle>
-					</CardHeader>
-					<CardContent>
-						<Table>
-							<TableBody>
-								<TableRow>
-									<TableCell className="font-medium">Gross Sales</TableCell>
-									<TableCell className="text-right">
-										<div className="flex items-center justify-end">
-											$250.00
-											<Badge className="ml-1 bg-indigo-800">
-												<AngleUpIcon className="w-4 h-4" />
-												1.5%
-											</Badge>
-										</div>
-									</TableCell>
-								</TableRow>
-								<TableRow>
-									<TableCell className="font-medium">Client Net</TableCell>
-									<TableCell className="text-right">
-										<div className="flex items-center justify-end">
-											$250.00
-											<Badge className="ml-1 bg-red-800">
-												<AngleDownIcon className="w-4 h-4" />
-												1.5%
-											</Badge>
-										</div>
-									</TableCell>
-								</TableRow>
-								<TableRow>
-									<TableCell className="font-medium">Merchline Net</TableCell>
-									<TableCell className="text-right">
-										<div className="flex items-center justify-end">
-											$250.00
-											<Badge className="ml-1 bg-indigo-800">
-												<AngleUpIcon className="w-4 h-4" />
-												1.5%
-											</Badge>
-										</div>
-									</TableCell>
-								</TableRow>
-								<TableRow>
-									<TableCell className="font-medium">Orders</TableCell>
-									<TableCell className="text-right">
-										<div className="flex items-center justify-end">
-											$250.00
-											<Badge className="ml-1 bg-indigo-800">
-												<AngleUpIcon className="w-4 h-4" />
-												1.5%
-											</Badge>
-										</div>
-									</TableCell>
-								</TableRow>
-								<TableRow>
-									<TableCell className="font-medium">Avg Order Value</TableCell>
-									<TableCell className="text-right">
-										<div className="flex items-center justify-end">
-											$250.00
-											<Badge className="ml-1 bg-indigo-800">
-												<AngleUpIcon className="w-4 h-4" />
-												1.5%
-											</Badge>
-										</div>
-									</TableCell>
-								</TableRow>
-							</TableBody>
-						</Table>
-					</CardContent>
-				</Card>
-
+			<div className="flex flex-col   gap-6 mt-6">
+				<div className="flex flex-wrap justify-evenly">
+					<Card>
+						<CardHeader className="pb-2">
+							<CardTitle>Today</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<Table>
+								<TableBody>
+									<TableRow>
+										<TableCell className="font-medium">Gross Sales</TableCell>
+										<TableCell className="text-right">
+											<div className="flex items-center justify-end">
+												$250.00
+												<Badge className="ml-1 bg-indigo-800">
+													<AngleUpIcon className="w-4 h-4" />
+													1.5%
+												</Badge>
+											</div>
+										</TableCell>
+									</TableRow>
+									<TableRow>
+										<TableCell className="font-medium">Client Net</TableCell>
+										<TableCell className="text-right">
+											<div className="flex items-center justify-end">
+												$250.00
+												<Badge className="ml-1 bg-red-800">
+													<AngleDownIcon className="w-4 h-4" />
+													1.5%
+												</Badge>
+											</div>
+										</TableCell>
+									</TableRow>
+									<TableRow>
+										<TableCell className="font-medium">Merchline Net</TableCell>
+										<TableCell className="text-right">
+											<div className="flex items-center justify-end">
+												$250.00
+												<Badge className="ml-1 bg-indigo-800">
+													<AngleUpIcon className="w-4 h-4" />
+													1.5%
+												</Badge>
+											</div>
+										</TableCell>
+									</TableRow>
+									<TableRow>
+										<TableCell className="font-medium">Orders</TableCell>
+										<TableCell className="text-right">
+											<div className="flex items-center justify-end">
+												$250.00
+												<Badge className="ml-1 bg-indigo-800">
+													<AngleUpIcon className="w-4 h-4" />
+													1.5%
+												</Badge>
+											</div>
+										</TableCell>
+									</TableRow>
+									<TableRow>
+										<TableCell className="font-medium">
+											Avg Order Value
+										</TableCell>
+										<TableCell className="text-right">
+											<div className="flex items-center justify-end">
+												$250.00
+												<Badge className="ml-1 bg-indigo-800">
+													<AngleUpIcon className="w-4 h-4" />
+													1.5%
+												</Badge>
+											</div>
+										</TableCell>
+									</TableRow>
+								</TableBody>
+							</Table>
+						</CardContent>
+					</Card>
+					<Card>
+						<CardHeader className="pb-2">
+							<CardTitle>Week</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<Table>
+								<TableBody>
+									<TableRow>
+										<TableCell className="font-medium">Gross Sales</TableCell>
+										<TableCell className="text-right">
+											<div className="flex items-center justify-end">
+												$250.00
+												<Badge className="ml-1 bg-indigo-800">
+													<AngleUpIcon className="w-4 h-4" />
+													1.5%
+												</Badge>
+											</div>
+										</TableCell>
+									</TableRow>
+									<TableRow>
+										<TableCell className="font-medium">Client Net</TableCell>
+										<TableCell className="text-right">
+											<div className="flex items-center justify-end">
+												$250.00
+												<Badge className="ml-1 bg-red-800">
+													<AngleDownIcon className="w-4 h-4" />
+													1.5%
+												</Badge>
+											</div>
+										</TableCell>
+									</TableRow>
+									<TableRow>
+										<TableCell className="font-medium">Merchline Net</TableCell>
+										<TableCell className="text-right">
+											<div className="flex items-center justify-end">
+												$250.00
+												<Badge className="ml-1 bg-indigo-800">
+													<AngleUpIcon className="w-4 h-4" />
+													1.5%
+												</Badge>
+											</div>
+										</TableCell>
+									</TableRow>
+									<TableRow>
+										<TableCell className="font-medium">Orders</TableCell>
+										<TableCell className="text-right">
+											<div className="flex items-center justify-end">
+												$250.00
+												<Badge className="ml-1 bg-indigo-800">
+													<AngleUpIcon className="w-4 h-4" />
+													1.5%
+												</Badge>
+											</div>
+										</TableCell>
+									</TableRow>
+									<TableRow>
+										<TableCell className="font-medium">
+											Avg Order Value
+										</TableCell>
+										<TableCell className="text-right">
+											<div className="flex items-center justify-end">
+												$250.00
+												<Badge className="ml-1 bg-indigo-800">
+													<AngleUpIcon className="w-4 h-4" />
+													1.5%
+												</Badge>
+											</div>
+										</TableCell>
+									</TableRow>
+								</TableBody>
+							</Table>
+						</CardContent>
+					</Card>
+					<Card>
+						<CardHeader className="pb-2">
+							<CardTitle>Month</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<Table>
+								<TableBody>
+									<TableRow>
+										<TableCell className="font-medium">Gross Sales</TableCell>
+										<TableCell className="text-right">
+											<div className="flex items-center justify-end">
+												$250.00
+												<Badge className="ml-1 bg-indigo-800">
+													<AngleUpIcon className="w-4 h-4" />
+													1.5%
+												</Badge>
+											</div>
+										</TableCell>
+									</TableRow>
+									<TableRow>
+										<TableCell className="font-medium">Client Net</TableCell>
+										<TableCell className="text-right">
+											<div className="flex items-center justify-end">
+												$250.00
+												<Badge className="ml-1 bg-red-800">
+													<AngleDownIcon className="w-4 h-4" />
+													1.5%
+												</Badge>
+											</div>
+										</TableCell>
+									</TableRow>
+									<TableRow>
+										<TableCell className="font-medium">Merchline Net</TableCell>
+										<TableCell className="text-right">
+											<div className="flex items-center justify-end">
+												$250.00
+												<Badge className="ml-1 bg-indigo-800">
+													<AngleUpIcon className="w-4 h-4" />
+													1.5%
+												</Badge>
+											</div>
+										</TableCell>
+									</TableRow>
+									<TableRow>
+										<TableCell className="font-medium">Orders</TableCell>
+										<TableCell className="text-right">
+											<div className="flex items-center justify-end">
+												$250.00
+												<Badge className="ml-1 bg-indigo-800">
+													<AngleUpIcon className="w-4 h-4" />
+													1.5%
+												</Badge>
+											</div>
+										</TableCell>
+									</TableRow>
+									<TableRow>
+										<TableCell className="font-medium">
+											Avg Order Value
+										</TableCell>
+										<TableCell className="text-right">
+											<div className="flex items-center justify-end">
+												$250.00
+												<Badge className="ml-1 bg-indigo-800">
+													<AngleUpIcon className="w-4 h-4" />
+													1.5%
+												</Badge>
+											</div>
+										</TableCell>
+									</TableRow>
+								</TableBody>
+							</Table>
+						</CardContent>
+					</Card>
+					{/* <Card>
+						<CardHeader className="pb-2">
+							<CardTitle>Year</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<Table>
+								<TableBody>
+									<TableRow>
+										<TableCell className="font-medium">Gross Sales</TableCell>
+										<TableCell className="text-right">
+											<div className="flex items-center justify-end">
+												$250.00
+												<Badge className="ml-1 bg-indigo-800">
+													<AngleUpIcon className="w-4 h-4" />
+													1.5%
+												</Badge>
+											</div>
+										</TableCell>
+									</TableRow>
+									<TableRow>
+										<TableCell className="font-medium">Client Net</TableCell>
+										<TableCell className="text-right">
+											<div className="flex items-center justify-end">
+												$250.00
+												<Badge className="ml-1 bg-red-800">
+													<AngleDownIcon className="w-4 h-4" />
+													1.5%
+												</Badge>
+											</div>
+										</TableCell>
+									</TableRow>
+									<TableRow>
+										<TableCell className="font-medium">Merchline Net</TableCell>
+										<TableCell className="text-right">
+											<div className="flex items-center justify-end">
+												$250.00
+												<Badge className="ml-1 bg-indigo-800">
+													<AngleUpIcon className="w-4 h-4" />
+													1.5%
+												</Badge>
+											</div>
+										</TableCell>
+									</TableRow>
+									<TableRow>
+										<TableCell className="font-medium">Orders</TableCell>
+										<TableCell className="text-right">
+											<div className="flex items-center justify-end">
+												$250.00
+												<Badge className="ml-1 bg-indigo-800">
+													<AngleUpIcon className="w-4 h-4" />
+													1.5%
+												</Badge>
+											</div>
+										</TableCell>
+									</TableRow>
+									<TableRow>
+										<TableCell className="font-medium">
+											Avg Order Value
+										</TableCell>
+										<TableCell className="text-right">
+											<div className="flex items-center justify-end">
+												$250.00
+												<Badge className="ml-1 bg-indigo-800">
+													<AngleUpIcon className="w-4 h-4" />
+													1.5%
+												</Badge>
+											</div>
+										</TableCell>
+									</TableRow>
+								</TableBody>
+							</Table>
+						</CardContent>
+					</Card> */}
+				</div>
 				<Card className=" col-span-3 p-8 overflow-auto">
 					<div className="flex items-center justify-between">
 						<p className="text-xl font-semibold">TOTALS</p>
-						<div className="flex mx-auto gap-16 justify-evenly">
+						<div className="flex flex-wrap mx-auto gap-16 justify-evenly">
 							<div className=" flex flex-col items-center">
 								<div className="text-gray-800 dark:text-white">$250.00</div>
 								<div className="text-gray-800 dark:text-white">Gross Sales</div>
@@ -334,7 +339,7 @@ export default function Home() {
 						</div>
 					</div>
 				</Card>
-				<Card className="  col-span-3 p-8">
+				<Card className="   p-8">
 					<LineChart />
 				</Card>
 			</div>

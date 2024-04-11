@@ -1,17 +1,5 @@
 import Link from "next/link";
-import { CardTitle, CardHeader, CardContent, Card } from "@/components/ui/card";
 
-import { LineChart } from "@/components/charts/LineChart";
-
-import {
-	Table,
-	TableBody,
-	TableCaption,
-	TableCell,
-	TableHead,
-	TableHeader,
-	TableRow,
-} from "@/components/ui/table";
 
 import {
 	Accordion,
@@ -20,12 +8,12 @@ import {
 	AccordionTrigger,
 } from "@/components/ui/accordion";
 
-import { Drawer } from "@/components/ui/drawer";
+
 
 export default function Dashboard({ children }) {
 	return (
 		<div className="flex h-full bg-gray-200 dark:bg-gray-900">
-			<aside className="w-1/6 bg-gradient-to-b from-white to-gray-100 dark:from-gray-800 dark:to-gray-700 hidden sm:block">
+			<aside className="w-1/6 bg-gradient-to-b from-white to-gray-100 dark:from-gray-800 dark:to-gray-700 lg:block hidden">
 				<div className="h-16 flex items-center justify-center border-b-2">
 					<h2 className="text-2xl font-semibold text-gray-800 dark:text-white">
 						Admin Panel
@@ -118,6 +106,7 @@ export default function Dashboard({ children }) {
 						</Link>
 					</li>
 				</ul>
+				
 			</aside>
 			{children}
 		</div>

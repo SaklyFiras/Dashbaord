@@ -12,8 +12,8 @@ import { Button } from "@/components/ui/button";
 
 import React from "react";
 
-import { DataTable } from "@/components/DataTable";
-import { columns } from "@/components/DataTable";
+import { DataTable } from "@/components/tables/shopsDataTable";
+import { columns } from "@/components/tables/shopsDataTable";
 
 const data = [
 	{
@@ -31,7 +31,9 @@ const data = [
 export function DrawerButton() {
 	return (
 		<Drawer>
-			<DrawerTrigger className=" bg-[#020817] p-[8px] px-4 hover:bg-inherit rounded-md">Shops</DrawerTrigger>
+			<DrawerTrigger className=" bg-[#020817] p-[8px] px-4 hover:bg-inherit rounded-md">
+				Shops
+			</DrawerTrigger>
 			<DrawerContent>
 				<DrawerHeader>
 					<DrawerTitle>Select shops</DrawerTitle>

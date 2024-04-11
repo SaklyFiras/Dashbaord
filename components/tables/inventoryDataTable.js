@@ -1,10 +1,7 @@
 "use client";
+import Image from "next/image";
 import * as React from "react";
-import {
-	CaretSortIcon,
-	ChevronDownIcon,
-	DotsHorizontalIcon,
-} from "@radix-ui/react-icons";
+import { ChevronDownIcon, DotsHorizontalIcon } from "@radix-ui/react-icons";
 import {
 	flexRender,
 	getCoreRowModel,
@@ -26,6 +23,9 @@ import {
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+
 import {
 	Table,
 	TableBody,
@@ -38,80 +38,80 @@ import {
 const data = [
 	{
 		id: "m5gr84i9",
-		Revenue: 316,
-		Name: "success",
-		email: "ken99@yahoo.com",
+		img: "https://images.unsplash.com/photo-1622838320000-4b3b3b3b3b3b",
+		Name: "firstArticle",
+		stock: 10,
+		purshased: 5,
 	},
 	{
 		id: "3u1reuv4",
-		Revenue: 242,
-		Name: "success",
-		email: "Abe45@gmail.com",
+		img: "https://images.unsplash.com/photo-1622838320000-4b3b3b3b3b3b",
+		Name: "secondArticle",
+		stock: 20,
+		purshased: 10,
 	},
 	{
 		id: "derv1ws0",
-		Revenue: 837,
-		Name: "processing",
-		email: "Monserrat44@gmail.com",
+		img: "https://images.unsplash.com/photo-1622838320000-4b3b3b3b3b3b",
+		Name: "thirdArticle",
+		stock: 30,
+		purshased: 15,
 	},
 	{
 		id: "5kma53ae",
-		Revenue: 874,
-		Name: "success",
-		email: "Silas22@gmail.com",
+		img: "https://images.unsplash.com/photo-1622838320000-4b3b3b3b3b3b",
+		Name: "fourthArticle",
+		stock: 40,
+		purshased: 20,
 	},
 	{
 		id: "bhqecj4p",
-		Revenue: 721,
-		Name: "failed",
-		email: "carmella@hotmail.com",
+		img: "https://images.unsplash.com/photo-1622838320000-4b3b3b3b3b3b",
+		Name: "fifthArticle",
+		stock: 50,
+		purshased: 25,
 	},
 ];
 
 export const columns = [
 	{
-		id: "select",
-		header: ({ table }) => (
-			<Checkbox
-				checked={
-					table.getIsAllPageRowsSelected() ||
-					(table.getIsSomePageRowsSelected() && "indeterminate")
-				}
-				onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-				aria-label="Select all"
-			/>
-		),
-		cell: ({ row }) => (
-			<Checkbox
-				checked={row.getIsSelected()}
-				onCheckedChange={(value) => row.toggleSelected(!!value)}
-				aria-label="Select row"
-			/>
-		),
-		enableSorting: false,
-		enableHiding: false,
-	},
-	{
-		accessorKey: "Name",
-		header: "Name",
-		cell: ({ row }) => (
-			<div className="capitalize">{row.getValue("Name")}</div>
-		),
-	},
-	
-	{
-		accessorKey: "Revenue",
-		header: () => <div className="text-right">Revenue</div>,
+		id: "img",
+		header: "Image",
 		cell: ({ row }) => {
-			const Revenue = parseFloat(row.getValue("Revenue"));
-
-			// Format the Revenue as a dollar Revenue
-			const formatted = new Intl.NumberFormat("en-US", {
-				style: "currency",
-				currency: "USD",
-			}).format(Revenue);
-
-			return <div className="text-right font-medium">{formatted}</div>;
+			const article = row.original;
+			return (
+				<Image
+					src={article.img}
+					width={40}
+					height={40}
+					alt="Article"
+					className="h-10 w-10 rounded-full"
+				/>
+			);
+		},
+	},
+	{
+		id: "Name",
+		header: "Name",
+		cell: ({ row }) => {
+			const article = row.original;
+			return <span>{article.Name}</span>;
+		},
+	},
+	{
+		id: "stock",
+		header: "Stock",
+		cell: ({ row }) => {
+			const article = row.original;
+			return <span>{article.stock}</span>;
+		},
+	},
+	{
+		id: "purshased",
+		header: "Purshased",
+		cell: ({ row }) => {
+			const article = row.original;
+			return <span>{article.purshased}</span>;
 		},
 	},
 	{
@@ -133,11 +133,11 @@ export const columns = [
 						<DropdownMenuItem
 							onClick={() => navigator.clipboard.writeText(payment.id)}
 						>
-							Copy payment ID
+							Copy product ID
 						</DropdownMenuItem>
 						<DropdownMenuSeparator />
-						<DropdownMenuItem>View customer</DropdownMenuItem>
-						<DropdownMenuItem>View payment details</DropdownMenuItem>
+
+						<DropdownMenuItem>View product details</DropdownMenuItem>
 					</DropdownMenuContent>
 				</DropdownMenu>
 			);
@@ -150,6 +150,7 @@ export function DataTable() {
 	const [columnFilters, setColumnFilters] = React.useState([]);
 	const [columnVisibility, setColumnVisibility] = React.useState({});
 	const [rowSelection, setRowSelection] = React.useState({});
+	const [sortOption, setSortOption] = React.useState("Revenue");
 
 	const table = useReactTable({
 		data,
@@ -174,13 +175,35 @@ export function DataTable() {
 		<div className="w-full">
 			<div className="flex items-center py-4">
 				<Input
-					placeholder="Filter emails..."
-					value={table.getColumn("email")?.getFilterValue() ?? ""}
+					placeholder="Filter by Name..."
+					value={table.getColumn("Name")?.getFilterValue() ?? ""}
 					onChange={(event) =>
-						table.getColumn("email")?.setFilterValue(event.target.value)
+						table.getColumn("Name")?.setFilterValue(event.target.value)
 					}
 					className="max-w-sm"
 				/>
+				<div className="ml-auto">
+					<RadioGroup
+						defaultValue="Name"
+						onChange={(value) => setSortOption(value)}
+						className="flex flex-wrap space-x-4 justify-center"
+					>
+						<p className="">Sort By</p>
+						<div>
+							<RadioGroupItem value="Revenue" id="Revenue-option"/>
+							<Label htmlFor="Revenue-option">Name</Label>
+						</div>
+						<div>
+							<RadioGroupItem value="Name" id="Name-option"/>
+							<Label htmlFor="Name-option">Stock</Label>
+						</div>
+						<div>
+							<RadioGroupItem value="Active" id="Active-option"/>
+							<Label htmlFor="Active-option">Purshased</Label>
+						</div>
+					</RadioGroup>
+				</div>
+
 				<DropdownMenu>
 					<DropdownMenuTrigger asChild>
 						<Button variant="outline" className="ml-auto">
