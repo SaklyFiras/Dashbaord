@@ -15,8 +15,8 @@ export default function Navbar() {
 				<MountainIcon className="h-6 w-6" />
 				<span className="text-lg font-semibold">MyDASHBOARD</span>
 			</Link>
-			<div className=" flex space-x-4 w-max">
-				<DrawerButton />
+			<div className="  inline-flex space-x-4 w-max">
+				<DrawerButton  />
 				<DatePickerWithRange />
 			</div>
 			<div className="flex items-center p-1">
@@ -176,3 +176,5 @@ function MountainIcon(props) {
 		</svg>
 	);
 }
+
+

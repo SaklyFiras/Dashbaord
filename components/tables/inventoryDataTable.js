@@ -74,6 +74,7 @@ const data = [
 ];
 
 export const columns = [
+	
 	{
 		id: "img",
 		header: "Image",
@@ -99,7 +100,7 @@ export const columns = [
 		},
 	},
 	{
-		id: "stock",
+		id: "Stock",
 		header: "Stock",
 		cell: ({ row }) => {
 			const article = row.original;
@@ -107,7 +108,7 @@ export const columns = [
 		},
 	},
 	{
-		id: "purshased",
+		id: "Purshased",
 		header: "Purshased",
 		cell: ({ row }) => {
 			const article = row.original;
