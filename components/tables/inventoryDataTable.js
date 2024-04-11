@@ -38,38 +38,38 @@ import {
 const data = [
 	{
 		id: "m5gr84i9",
-		img: "https://images.unsplash.com/photo-1622838320000-4b3b3b3b3b3b",
+		img: "https://i.pinimg.com/originals/f7/1c/5c/f71c5c1e89dbb27a7e840b6fb60932eb.png",
 		Name: "firstArticle",
-		stock: 10,
+		stock: 17,
 		purshased: 5,
 	},
 	{
 		id: "3u1reuv4",
-		img: "https://images.unsplash.com/photo-1622838320000-4b3b3b3b3b3b",
+		img: "https://i.pinimg.com/originals/f7/1c/5c/f71c5c1e89dbb27a7e840b6fb60932eb.png",
 		Name: "secondArticle",
-		stock: 20,
-		purshased: 10,
+		stock: 70,
+		purshased: 29,
 	},
 	{
 		id: "derv1ws0",
-		img: "https://images.unsplash.com/photo-1622838320000-4b3b3b3b3b3b",
+		img: "https://i.pinimg.com/originals/f7/1c/5c/f71c5c1e89dbb27a7e840b6fb60932eb.png",
 		Name: "thirdArticle",
-		stock: 30,
+		stock: 10,
 		purshased: 15,
 	},
 	{
 		id: "5kma53ae",
-		img: "https://images.unsplash.com/photo-1622838320000-4b3b3b3b3b3b",
+		img: "https://i.pinimg.com/originals/f7/1c/5c/f71c5c1e89dbb27a7e840b6fb60932eb.png",
 		Name: "fourthArticle",
-		stock: 40,
-		purshased: 20,
+		stock: 50,
+		purshased: 25,
 	},
 	{
 		id: "bhqecj4p",
-		img: "https://images.unsplash.com/photo-1622838320000-4b3b3b3b3b3b",
+		img: "https://i.pinimg.com/originals/f7/1c/5c/f71c5c1e89dbb27a7e840b6fb60932eb.png",
 		Name: "fifthArticle",
-		stock: 50,
-		purshased: 25,
+		stock: 40,
+		purshased: 20,
 	},
 ];
 
@@ -150,7 +150,7 @@ export function DataTable() {
 	const [columnFilters, setColumnFilters] = React.useState([]);
 	const [columnVisibility, setColumnVisibility] = React.useState({});
 	const [rowSelection, setRowSelection] = React.useState({});
-	const [sortOption, setSortOption] = React.useState("Revenue");
+	const [sortOption, setSortOption] = React.useState("Name");
 
 	const table = useReactTable({
 		data,
@@ -185,22 +185,22 @@ export function DataTable() {
 				<div className="ml-auto">
 					<RadioGroup
 						defaultValue="Name"
-						onChange={(value) => setSortOption(value)}
+						onValueChange={(value) => setSortOption(value)}
 						className="flex flex-wrap space-x-4 justify-center"
 					>
-						<p className="">Sort By</p>
-						<div>
-							<RadioGroupItem value="Revenue" id="Revenue-option"/>
-							<Label htmlFor="Revenue-option">Name</Label>
-						</div>
-						<div>
-							<RadioGroupItem value="Name" id="Name-option"/>
-							<Label htmlFor="Name-option">Stock</Label>
-						</div>
-						<div>
-							<RadioGroupItem value="Active" id="Active-option"/>
-							<Label htmlFor="Active-option">Purshased</Label>
-						</div>
+						<p>Sort By</p>
+						<span>
+							<RadioGroupItem value="Name" id="Name" />
+							<Label htmlFor="Name">Name</Label>
+						</span>
+						<span>
+							<RadioGroupItem value="Stock" id="Stock" />
+							<Label htmlFor="Stock">Stock</Label>
+						</span>
+						<span>
+							<RadioGroupItem value="Purshased" id="Purshased" />
+							<Label htmlFor="Purshased">Purshased</Label>
+						</span>
 					</RadioGroup>
 				</div>
 
@@ -253,21 +253,34 @@ export function DataTable() {
 					</TableHeader>
 					<TableBody>
 						{table.getRowModel().rows?.length ? (
-							table.getRowModel().rows.map((row) => (
-								<TableRow
-									key={row.id}
-									data-state={row.getIsSelected() && "selected"}
-								>
-									{row.getVisibleCells().map((cell) => (
-										<TableCell key={cell.id}>
-											{flexRender(
-												cell.column.columnDef.cell,
-												cell.getContext()
-											)}
-										</TableCell>
-									))}
-								</TableRow>
-							))
+							table
+								.getRowModel()
+								.rows.sort((a, b) => {
+									if (sortOption === "Name") {
+										return a.original.Name.localeCompare(b.original.Name);
+									}
+									if (sortOption === "Stock") {
+										return a.original.stock - b.original.stock;
+									}
+									if (sortOption === "Purshased") {
+										return a.original.purshased - b.original.purshased;
+									}
+								})
+								.map((row) => (
+									<TableRow
+										key={row.id}
+										data-state={row.getIsSelected() && "selected"}
+									>
+										{row.getVisibleCells().map((cell) => (
+											<TableCell key={cell.id}>
+												{flexRender(
+													cell.column.columnDef.cell,
+													cell.getContext()
+												)}
+											</TableCell>
+										))}
+									</TableRow>
+								))
 						) : (
 							<TableRow>
 								<TableCell

@@ -195,26 +195,20 @@ export function DataTable() {
         <div className="ml-auto">
           <RadioGroup
             defaultValue="Revenue"
-            onChange={value => setSortOption(value)}
+            onValueChange={value => setSortOption(value)}
             className="flex space-x-4"
           >
             <p className="">Sort By</p>
             <div>
-              <RadioGroupItem value="Revenue" id="Revenue-option">
-                Revenue
-              </RadioGroupItem>
+              <RadioGroupItem value="Revenue" id="Revenue-option"/>
               <Label htmlFor="Revenue-option">Revenue</Label>
             </div>
             <div>
-              <RadioGroupItem value="Name" id="Name-option">
-                Name
-              </RadioGroupItem>
+              <RadioGroupItem value="Name" id="Name-option"/>
               <Label htmlFor="Name-option">Name</Label>
             </div>
             <div>
-              <RadioGroupItem value="Active" id="Active-option">
-                Active
-              </RadioGroupItem>
+              <RadioGroupItem value="Active" id="Active-option"/>
               <Label htmlFor="Active-option">Active</Label>
             </div>
           </RadioGroup>
@@ -267,7 +261,15 @@ export function DataTable() {
           </TableHeader>
           <TableBody>
             {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map(row => (
+              table.getRowModel().rows.sort((a,b)=>{
+                if (sortOption === "Name") {
+                  return a.original.Name.localeCompare(b.original.Name)
+                } else if (sortOption === "Revenue") {
+                  return a.original.Revenue - b.original.Revenue
+                } else if (sortOption === "Active") {
+                  return a.original.active - b.original.active
+                }
+              }).map(row => (
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
